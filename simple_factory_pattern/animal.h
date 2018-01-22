@@ -10,14 +10,14 @@ public:
     virtual void Show() = 0;
 };
 
-//单核a
+//单身狗
 class SingleDog: public SingleAnimal
 {
 public:
     void Show();
 };
 
-//单核b
+//单身猫
 class SingleCat: public SingleAnimal
 {
 public:

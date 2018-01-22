@@ -28,7 +28,7 @@ int main(){
         else
             cout << "don't have factory to produce " << command << endl;
     }
-    /* show core type */
+    /* show animal type */
     cout << "now, show them:" << endl;
     for(i = animallist.begin(); i != animallist.end(); ++i){
         (*i)->Show();
