@@ -1,3 +1,6 @@
+/**
+ **工厂能够生产两种动物
+ **/
 #ifndef FACTORY_H
 #define FACTORY_H
 

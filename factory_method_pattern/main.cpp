@@ -11,29 +11,24 @@ using namespace std;
 
 int main(){
     string command;
-    ATYPE animaltype;
-    Factory *myfactory = new Factory();
+    Factory *mydogfactory = new FactoryDog();
+    Factory *mycatfactory = new FactoryCat();
     
     list<SingleAnimal*> animallist;    
     list<SingleAnimal*>::iterator i;
-    SingleAnimal* temp;
     /* produce animal using factory */
     cout << "input cat or dog for animal type, or input stop to stop input:" << endl;
     while(cin >> command){
         if(command == "stop")
             break;
         else if(command == "dog")
-            animaltype = DOG;
+            animallist.push_back(mydogfactory->CreateSingleAnimal());
         else if(command == "cat")
-            animaltype = CAT;
+            animallist.push_back(mycatfactory->CreateSingleAnimal());
         else
-            animaltype = OTHER;
-        
-        temp = myfactory->CreateSingleAnimal(animaltype);
-        if(temp != 0)
-            animallist.push_back(temp);
+            cout << "don't have factory to produce " << command << endl;
     }
-    /* show animal type */
+    /* show core type */
     cout << "now, show them:" << endl;
     for(i = animallist.begin(); i != animallist.end(); ++i){
         (*i)->Show();
@@ -43,6 +38,5 @@ int main(){
         delete *i;
         i = animallist.erase(i);
     }
-    delete temp;
     return 0;
 }
